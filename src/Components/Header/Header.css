@@ -3,7 +3,7 @@
 /*Variables colores*/
 :root{
   --first-color: #001326;
-  --second-color: #05314d;
+  --second-color: #79c6e7;
 }
 
 /*===== Fuente y tipografia =====*/
@@ -39,6 +39,12 @@ ul{
 }
 a{
   text-decoration: none;
+}
+
+.headerAlign {
+    flex-direction: row;
+    justify-content: flex-start;
+
 }
 
 .navbar {

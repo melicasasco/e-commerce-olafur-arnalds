@@ -1,21 +1,29 @@
+import React, { Component } from 'react';
+import './Header.css';
 import logo from './logo.png';
+import CartWidget from '../CartWidget/shoppingCart.png';
 
-const Navbar = () => {
-    return (  
-        <header>
-            <nav className="navbar nav nav__toggle 1-header">
-            <img className="logo"src={logo} alt="logo" height="80px"></img>
+class Header extends Component {
+    render() {
+        return (
+            <nav className="navbar nav">
+            <img src={logo} alt="logo" height="80px"></img>
                 <div className="links">
                     <ul>
                         <li className="nav__item"><a href="/">CD</a></li>
                         <li className="nav__item"><a href="/">VINYL</a></li>
                         <li className="nav__item"><a href="/">SHEET MUSIC</a></li>
                         <li className="nav__item"> <a href="/">TOUR</a></li>
+
                     </ul>
                 </div>
+                <img  src={CartWidget} alt="cart" height="25px"></img>
+                <img></img>
             </nav>
-        </header>
-    );
+        )
+    }
 }
- 
-export default Navbar;
+
+export default Header;
+
+
