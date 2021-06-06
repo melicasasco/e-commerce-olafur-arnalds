@@ -1,12 +1,13 @@
 import React from 'react';
-import shoppingCart from './shoppingCart.png';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 
 function CartWidget() {
     return (
         <div>
-            <img src={shoppingCart} alt="cart"></img>
+            <ShoppingCartOutlinedIcon  />
+            <SearchOutlinedIcon />
         </div>
     )
 }
-
 export default CartWidget;

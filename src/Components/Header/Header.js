@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Header.css';
 import logo from './logo.png';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
+import CartWidget from '../CartWidget/CartWidget';
 
 class Header extends Component {
     render() {
@@ -17,8 +16,7 @@ class Header extends Component {
                         <li className="nav__item"> <a href="/">TOUR</a></li>
                     </ul>
                 </div>
-                <ShoppingCartOutlinedIcon  />
-                <SearchOutlinedIcon />
+                <CartWidget />
             </nav>
         )
     }
