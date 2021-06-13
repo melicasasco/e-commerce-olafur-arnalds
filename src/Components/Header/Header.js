@@ -3,11 +3,13 @@ import './Header.css';
 import logo from './logo.png';
 import CartWidget from '../CartWidget/CartWidget';
 
+
 class Header extends Component {
+    
     render() {
         return (
             <nav className="navbar nav">
-            <img src={logo} alt="logo" height="80px"></img>
+            <img className='logo' src={logo} alt="logo" height="80px"></img>
                 <div className="links">
                     <ul>
                         <li className="nav__item"><a href="/">CD</a></li>

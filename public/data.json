@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "name": "When We Are Born",
+        "type": "Vinyl",
+        "price": "40"
+    },
+    {
+        "id":2,
+        "name": "Re:member",
+        "type": "Vinyl",
+        "price": "35"
+    },
+    {
+        "id":3,
+        "name": "Island Songs",
+        "type": "Vinyl",
+        "price": "20"
+    },
+    {
+        "id":4,
+        "name": "The Chopin Project",
+        "type": "Vinyl",
+        "price": "20"
+    }
+]
+
+    
+    
+    

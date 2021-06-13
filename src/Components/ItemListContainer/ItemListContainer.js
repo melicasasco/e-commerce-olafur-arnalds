@@ -1,13 +1,17 @@
 import React from 'react';
-import oli from './oli.jpg';
+import ItemCount from './ItemCount';
+import { ItemList } from './ItemList';
 
-function ItemListContainer({text}) {
+function ItemListContainer() {
+    
     return (
         <div>
-            <h1>This is {text}</h1>
-            <img src={oli}></img>
+            <div className='cards'>
+            <ItemList />
+            </div>
+
         </div>
     )
 }
 
-export default ItemListContainer
+export default ItemListContainer;
