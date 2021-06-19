@@ -3,25 +3,33 @@
         "id":1,
         "name": "When We Are Born",
         "type": "Vinyl",
-        "price": "40"
+        "price": "40",
+        "imagenUrl": "https://cdn.shopify.com/s/files/1/0017/4679/6595/products/OA_SKOP_digital_album_cover_bb14683c-9de1-4e7d-bda8-f0234817a4b1_600x.jpg?v=1606989903",
+        "stock" : 5 
     },
     {
         "id":2,
         "name": "Re:member",
-        "type": "Vinyl",
-        "price": "35"
+        "type": "CD",
+        "price": "35",
+        "imagenUrl": "https://cdn.shopify.com/s/files/1/0017/4679/6595/products/OA_SKOP_digital_album_cover_bb14683c-9de1-4e7d-bda8-f0234817a4b1_600x.jpg?v=1606989903",
+        "stock" : 5 
     },
     {
         "id":3,
         "name": "Island Songs",
         "type": "Vinyl",
-        "price": "20"
+        "price": "20",
+        "imagenUrl": "https://cdn.shopify.com/s/files/1/0017/4679/6595/products/OA_SKOP_digital_album_cover_bb14683c-9de1-4e7d-bda8-f0234817a4b1_600x.jpg?v=1606989903",
+        "stock" : 5 
     },
     {
         "id":4,
         "name": "The Chopin Project",
         "type": "Vinyl",
-        "price": "20"
+        "price": "20",
+        "imagenUrl": "https://cdn.shopify.com/s/files/1/0017/4679/6595/products/OA_SKOP_digital_album_cover_bb14683c-9de1-4e7d-bda8-f0234817a4b1_600x.jpg?v=1606989903",
+        "stock" : 5 
     }
 ]
 
