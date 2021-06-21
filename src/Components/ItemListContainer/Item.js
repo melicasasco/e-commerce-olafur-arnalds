@@ -15,8 +15,8 @@ function Item(props) {
                     <img src={props.imagenUrl} alt=''></img>
                 </div>
                 <div className='card-content'>
-                    <div className='card-title'>
-                        <h4>{props.title}</h4>
+                    <div className='card-name'>
+                        <h4>{props.name}</h4>
                     </div>
                 </div>
                 <div className='card-body'>
