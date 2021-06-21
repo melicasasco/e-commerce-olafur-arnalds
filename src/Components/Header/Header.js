@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Header.css';
 import logo from './logo.png';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from "react-router-dom";
 
 
-class Header extends Component {
-    
-    render() {
-        return (
+
+function Header () { 
+       return (
             <nav className="navbar nav">
-            <img className='logo' src={logo} alt="logo" height="80px"></img>
+            <Link to="/" >
+                <img className='logo' src={logo} alt="logo" height="80px"></img>
+            </Link>
                 <div className="links">
                     <ul>
-                        <li className="nav__item"><a href="/">CD</a></li>
-                        <li className="nav__item"><a href="/">VINYL</a></li>
-                        <li className="nav__item"><a href="/">SHEET MUSIC</a></li>
-                        <li className="nav__item"> <a href="/">TOUR</a></li>
+                        <Link to="/shop" className="nav__item">SHOP</Link>
+                        <Link to="/about" className="nav__item">ABOUT</Link>
+                        <Link to="/contact" className="nav__item">CONTACT</Link>
                     </ul>
                 </div>
                 <CartWidget />
             </nav>
         )
     }
-}
 
 export default Header;
 

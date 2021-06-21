@@ -20,7 +20,7 @@ function Item(props) {
                     </div>
                 </div>
                 <div className='card-body'>
-                    <p>{props.type}</p>
+                    <p>{props.category}</p>
                 </div>
                 <div className='button'>
                 <ItemCount 

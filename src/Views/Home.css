@@ -1,0 +1,7 @@
+.oli {
+        transition: 1s;
+        cursor: pointer;
+      }
+      .oli:hover{
+        transform: scale(1.1);
+      }
