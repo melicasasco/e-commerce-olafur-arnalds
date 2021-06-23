@@ -8,7 +8,7 @@ function Shop() {
     return (
       < div className="App">
         <ShopNavigation />
-        <h2 style={{color: '#001326', padding: '19px' }}>Featured products</h2>
+        <h2 style={{color: '#001326', padding: '19px' }}>Highlights</h2>
         <ItemListContainer></ItemListContainer>
         </div>
     );
