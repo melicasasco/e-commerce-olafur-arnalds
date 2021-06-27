@@ -9,6 +9,7 @@ import Shop from "./Views/Shop";
 import Header from './Components/Header/Header'
 import ItemDetailContainer from './Components/ItemListContainer/ItemDetailContainer'
 import ItemCategoryContainer from './Components/ItemListContainer/ItemCategoryContainer';
+import Cart from './Components/Cart';
 // REACT-ROUTER-DOM
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -25,6 +26,8 @@ function App () {
               <Route path="/Contact" component={Contact} />
               <Route path="/detail/:id" component={ItemDetailContainer} />
               <Route path="/category/:id" component={ItemCategoryContainer} />
+              <Route path="/cart" component={Cart} />
+
           </Switch>
         </div>
     </Router>

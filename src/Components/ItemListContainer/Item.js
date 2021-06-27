@@ -1,13 +1,7 @@
 import React from 'react';
 import './Item.css';
-import ItemCount from './ItemCount';
-
-
 
 function Item(props) {
-    const onAdd = (cantidad) => {
-        console.log('Agregar al carrito', cantidad);
-    }
     return (
         <div className='container'>
            <div className='card-container'>
@@ -23,14 +17,9 @@ function Item(props) {
                     <p>{props.category}</p>
                 </div>
                 <div className='button'>
-                <ItemCount 
-                    stock= {props.stock}
-                    initial = '1'
-                    onAdd={onAdd}>
-                </ItemCount>
                 </div>
             </div>
-            </div>
+        </div>
     )
 }
 

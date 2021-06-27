@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState, useContext } from 'react';
+import ItemCount from './ItemCount';
+import { Link } from "react-router-dom";
+
 
 function ItemDetail(props) {
-    console.log(props)
+    const [itemsToAdd, setItemsToAdd] = useState (0);
+
+    const onAdd = (e) => {
+        setItemsToAdd(e)
+     }
     return (
         <div>
             <div className='container itemDescription'>
@@ -20,6 +27,16 @@ function ItemDetail(props) {
                     <div className='card-body'>
                        <p style={{padding: '20px'}}>{props.price}€</p>
                     </div>
+                    {itemsToAdd == 0 && (
+                        <ItemCount stock= {props.stock}
+                        initial = '1'
+                        onAdd={onAdd} />
+                    )}
+                    {itemsToAdd > 0 && (
+                        <Link to="/cart">
+                            <button>Terminar mi compra</button>
+                        </Link>
+                    )} 
                 </div>
                 <div>
                     <h2>About</h2>

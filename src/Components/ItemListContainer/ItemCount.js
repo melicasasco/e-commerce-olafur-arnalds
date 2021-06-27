@@ -29,7 +29,8 @@ function ItemCount({stock, initial, onAdd}) {
       <Button onClick={handleUp} variant="outlined">+</Button>
       </div>
       <div>
-      <Button onClick={()=>onAdd(parseInt(initial))} variant="outlined">Add to cart</Button>
+      <Button onClick={()=>onAdd(number)} variant="outlined">Add to cart</Button>
+
       </div>
     </div>
   );
