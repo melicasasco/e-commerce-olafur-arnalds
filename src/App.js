@@ -9,28 +9,31 @@ import Shop from "./Views/Shop";
 import Header from './Components/Header/Header'
 import ItemDetailContainer from './Components/ItemListContainer/ItemDetailContainer'
 import ItemCategoryContainer from './Components/ItemListContainer/ItemCategoryContainer';
-import Cart from './Components/Cart';
+import Cart from './Components/Cart/Cart';
 // REACT-ROUTER-DOM
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//Context
+import { CartProvider } from './Components/Context/CartContext';
 
 function App () {
 
   return (
-    <Router>
-      < div className="App">
-        <Header />
-          <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/Shop" component={Shop} />
-              <Route path="/About" component={About} />
-              <Route path="/Contact" component={Contact} />
-              <Route path="/detail/:id" component={ItemDetailContainer} />
-              <Route path="/category/:id" component={ItemCategoryContainer} />
-              <Route path="/cart" component={Cart} />
-
-          </Switch>
-        </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        < div className="App">
+          <Header />
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/Shop" component={Shop} />
+                <Route path="/About" component={About} />
+                <Route path="/Contact" component={Contact} />
+                <Route path="/detail/:id" component={ItemDetailContainer} />
+                <Route path="/category/:id" component={ItemCategoryContainer} />
+                <Route path="/cart" component={Cart} />
+            </Switch>
+          </div>
+      </Router>
+    </CartProvider>
     );
   }
 

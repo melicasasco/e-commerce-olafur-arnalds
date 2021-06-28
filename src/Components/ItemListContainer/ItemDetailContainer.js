@@ -18,6 +18,7 @@ function ItemDetailContainer({match}) {
         ) : (
         <>
             <ItemDetail key={item[0].id}
+                        id={item[0].id}
                         price={item[0].price}
                         name={item[0].name}
                         category={item[0].category}

@@ -1,13 +1,17 @@
 import React, { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
 import { Link } from "react-router-dom";
+import { CartContext } from '../Context/CartContext';
+import { Button } from '@material-ui/core';
 
 
 function ItemDetail(props) {
     const [itemsToAdd, setItemsToAdd] = useState (0);
+ 	const {items, AddItem} = useContext(CartContext);
 
     const onAdd = (e) => {
-        setItemsToAdd(e)
+        AddItem(props, e);
+        setItemsToAdd(e);
      }
     return (
         <div>
@@ -34,7 +38,7 @@ function ItemDetail(props) {
                     )}
                     {itemsToAdd > 0 && (
                         <Link to="/cart">
-                            <button>Terminar mi compra</button>
+                            <Button variant="outlined">Checkout</Button>
                         </Link>
                     )} 
                 </div>
@@ -48,3 +52,6 @@ function ItemDetail(props) {
 }
 
 export default ItemDetail
+
+
+
