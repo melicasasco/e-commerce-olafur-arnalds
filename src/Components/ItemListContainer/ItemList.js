@@ -3,19 +3,35 @@ import './Item.css';
 import Item from './Item';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-
+import { db } from '../../firebase';
 
 export const ItemList = () => {
   const [dataToShow, setDataToShow] = useState([]);
 
-  const miData = () => {
-    setTimeout(
-      () => axios('./data.json').then((res) => setDataToShow(res.data)), 2000);
-  };
-  
-  useEffect(() => {
-    miData(); 
+//Llamada firebase
+  const getItems = () => {
+		db.collection('items').onSnapshot((querySnapshot) => {
+			const docs = [];
+			querySnapshot.forEach((doc) => {
+				docs.push({ ...doc.data(), id: doc.id });
+				console.log(docs);
+			});
+			setDataToShow(docs);
+		});
+	};
+	useEffect(() => {
+		getItems();
 	}, []);
+
+
+  //const miData = () => {
+    //setTimeout(
+      //() => axios('./data.json').then((res) => setDataToShow(res.data)), 2000);
+  //};
+  
+ // useEffect(() => {
+   // miData(); 
+	//}, []);
 
   return (
     <>
@@ -31,7 +47,7 @@ export const ItemList = () => {
                 <Item key={element.id}
                       name={element.name}
                       category={element.category}
-                      imagenUrl={element.imagenUrl}
+                      imgUrl={element.imgUrl}
                       stock={element.stock}>
                 </Item>
               </Link>

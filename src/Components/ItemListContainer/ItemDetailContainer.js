@@ -2,14 +2,32 @@ import React, {useEffect, useState } from 'react';
 import axios from 'axios';
 import ItemDetail  from './ItemDetail';
 import '../Header/Header.css';
+import { db } from '../../firebase';
 
 function ItemDetailContainer({match}) {
      let itemId = parseInt(match.params.id);
      const [item, setItem] = useState ([]);
 
-     useEffect(() => {
-        axios('../data.json').then((res) => setItem (res.data.filter((element) => element.id == itemId)));
-     }, []);
+  //Llamada firebase
+  const getItems = () => {
+		db.collection('items').onSnapshot((querySnapshot) => {
+			const docs = [];
+			querySnapshot.forEach((doc) => {
+				docs.push({ ...doc.data(), id: doc.id });
+				console.log(docs);
+			});
+			setItem(docs);
+		});
+	};
+	useEffect(() => {
+		getItems();
+	}, []);
+     
+
+    
+     //useEffect(() => {
+       // axios('../data.json').then((res) => setItem (res.data.filter((element) => element.id == itemId)));
+     //}, []);
 
     return (
         <>
@@ -22,7 +40,7 @@ function ItemDetailContainer({match}) {
                         price={item[0].price}
                         name={item[0].name}
                         category={item[0].category}
-                        imagenUrl={item[0].imagenUrl}
+                        imgUrl={item[0].imgUrl}
                         stock={item[0].stock}
                         description={item[0].description}>  
             </ItemDetail>
