@@ -6,18 +6,24 @@ export const CartProvider = (props) => {
 	const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const AddItem = (item, quantity) => {
-    if (!IsInCart(item.id)) {
-      setTotal(total + item.price*quantity);
-      items.push({item: item, quantity: quantity});
+  const AddItem = (itemToAdd, quantity) => {
+    if (!IsInCart(itemToAdd.id)) {
+      setTotal(total + itemToAdd.price*quantity);
+      const newItems = Array.from(items);
+      newItems.push({item: itemToAdd, quantity: quantity});
+      setItems(newItems);
     } 
   }
  
   //Remove
-  const RemoveItem = (id) => {
-    items.splice(
-      items.findIndex((i) => i.item.id === id)
-    );
+  const RemoveItem = (itemToRemove) => {
+    console.log(itemToRemove);
+    const newItems = Array.from(items);
+    const positionToRemove = newItems.findIndex((i) => i.item.id === itemToRemove.item.id);
+    console.log(positionToRemove);
+    setTotal(total - newItems[positionToRemove].item.price*newItems[positionToRemove].quantity);
+    newItems.splice(positionToRemove,1);
+    setItems(newItems);
   }
 
   //Clear

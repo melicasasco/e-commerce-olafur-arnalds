@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { CartContext } from '../Context/CartContext';
 import { Button } from '@material-ui/core';
 import './cart.css';
-import { Link } from "react-router-dom";
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 
 
@@ -36,9 +36,7 @@ function Cart() {
                                 <td>€ {element.item.price} </td>
                                 <td>€ {element.quantity*element.item.price}</td>
                                 <td>
-                                    <Link to="/cart">
-                                        <Button onClick={RemoveItem} variant="outlined">Remove</Button>
-                                    </Link>
+                                    <DeleteForeverIcon onClick={()=>{RemoveItem(element)}} variant="outlined"></DeleteForeverIcon>
                                 </td>
                             </tr>))}
                             </table>

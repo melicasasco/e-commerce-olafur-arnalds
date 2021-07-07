@@ -9,10 +9,11 @@ function ItemCategoryContainer({match}) {
 
     let itemCategory = match.params.id;
     const [category, setCategory] = useState ([]);
+
     
      //Llamada firebase
   const getItems = () => {
-		db.collection('items').onSnapshot((querySnapshot) => {
+		db.collection('items').where('category','==', itemCategory).get().then((querySnapshot) => {
 			const docs = [];
 			querySnapshot.forEach((doc) => {
 				docs.push({ ...doc.data(), id: doc.id });
@@ -22,8 +23,8 @@ function ItemCategoryContainer({match}) {
 		});
 	};
 	useEffect(() => {
-		getItems();
-	}, []);
+    getItems();
+	}, );
 
 
     //console.log(itemCategory);
@@ -41,7 +42,7 @@ function ItemCategoryContainer({match}) {
         <ShopNavigation className="shopMenu" />
            <ul className="cards">
             {category.map((element) => (
-              <Link to={`/detail/${element.id}`} key={element.id}>
+              <Link to={`/detail/${element.idProducto}`} key={element.id}>
                 <Item key={element.id}
                       name={element.name}
                       category={element.category}

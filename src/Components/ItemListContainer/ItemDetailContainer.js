@@ -10,9 +10,10 @@ function ItemDetailContainer({match}) {
 
   //Llamada firebase
   const getItems = () => {
-		db.collection('items').onSnapshot((querySnapshot) => {
+		db.collection('items').where('idProducto','==',itemId).get().then((querySnapshot) => {
 			const docs = [];
-			querySnapshot.forEach((doc) => {
+      console.log(querySnapshot);
+      querySnapshot.forEach((doc) => {
 				docs.push({ ...doc.data(), id: doc.id });
 				console.log(docs);
 			});

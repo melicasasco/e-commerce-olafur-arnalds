@@ -43,7 +43,7 @@ export const ItemList = () => {
           <ul className="cards">
             {dataToShow.filter((element) => element.destacado)
              .map((element) => (
-              <Link to={`/detail/${element.id}`} key={element.id}>
+              <Link to={`/detail/${element.idProducto}`} key={element.id}>
                 <Item key={element.id}
                       name={element.name}
                       category={element.category}
