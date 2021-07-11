@@ -3,33 +3,33 @@ import React, { createContext, useState } from 'react';
 export const CartContext = createContext();
 
 export const CartProvider = (props) => {
-	const [items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
 
   const AddItem = (itemToAdd, quantity) => {
     if (!IsInCart(itemToAdd.id)) {
-      setTotal(total + itemToAdd.price*quantity);
+      setTotal(total + itemToAdd.price * quantity);
       const newItems = Array.from(items);
-      newItems.push({item: itemToAdd, quantity: quantity});
+      newItems.push({ item: itemToAdd, quantity: quantity });
       setItems(newItems);
-    } 
+    }
   }
- 
+
   //Remove
   const RemoveItem = (itemToRemove) => {
     console.log(itemToRemove);
     const newItems = Array.from(items);
     const positionToRemove = newItems.findIndex((i) => i.item.id === itemToRemove.item.id);
     console.log(positionToRemove);
-    setTotal(total - newItems[positionToRemove].item.price*newItems[positionToRemove].quantity);
-    newItems.splice(positionToRemove,1);
+    setTotal(total - newItems[positionToRemove].item.price * newItems[positionToRemove].quantity);
+    newItems.splice(positionToRemove, 1);
     setItems(newItems);
   }
 
   //Clear
   const Clear = () => {
-    setItems ([]);
-    setTotal (0);
+    setItems([]);
+    setTotal(0);
   }
 
   //IsInCart
@@ -44,9 +44,9 @@ export const CartProvider = (props) => {
 
 
 
-return (
-    <CartContext.Provider value={{items, AddItem, Clear, RemoveItem, total}}>
-        {props.children}
+  return (
+    <CartContext.Provider value={{ items, AddItem, Clear, RemoveItem, total }}>
+      {props.children}
     </CartContext.Provider>
-)
+  )
 }
