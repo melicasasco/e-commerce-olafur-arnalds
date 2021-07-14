@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Item.css';
 import Item from './Item';
-import axios from 'axios';
+//import axios from 'axios';
 import { Link } from "react-router-dom";
 import { db } from '../../firebase';
 
@@ -35,7 +35,7 @@ export const ItemList = () => {
 
   return (
     <>
-      {dataToShow.length == 0 ? (
+      {dataToShow.length === 0 ? (
         <h1>Loading...</h1>
       ) : (
         <>

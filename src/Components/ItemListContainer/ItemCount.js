@@ -25,12 +25,11 @@ function ItemCount({stock, initial, onAdd}) {
     <div>
       <div>
       <p>{number}</p>
-      <Button onClick={handleDown} variant="outlined">-</Button>
-      <Button onClick={handleUp} variant="outlined">+</Button>
+      <Button style={{margin: '0.1rem'}} onClick={handleDown} variant="outlined">-</Button>
+      <Button style={{margin: '0.1rem'}} onClick={handleUp} variant="outlined">+</Button>
       </div>
-      <div>
+      <div style={{padding: '0.4rem'}}>
       <Button onClick={()=>onAdd(number)} variant="outlined">Add to cart</Button>
-
       </div>
     </div>
   );

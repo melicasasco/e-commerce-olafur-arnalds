@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import './Item.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Item(props) {
+    useEffect(() => {
+        AOS.init({duration: 2000});
+      }, []);
     return (
-        <div className='container'>
+        <div  data-aos='fade-down' className='container'>
            <div className='card-container'>
                 <div className='image-container'>
                     <img src={props.imgUrl} alt=''></img>

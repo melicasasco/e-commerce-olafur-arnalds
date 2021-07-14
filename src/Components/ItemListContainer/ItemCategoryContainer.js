@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import { Link } from "react-router-dom";
 import Item from './Item';
 import ShopNavigation from '../Navigation/ShopNavigation';
@@ -35,7 +35,7 @@ function ItemCategoryContainer({match}) {
     
     return (
         <>
-        {category.length == 0 ? (
+        {category.length === 0 ? (
           <h1>Loading...</h1>
         ) : (
         <>

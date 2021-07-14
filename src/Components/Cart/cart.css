@@ -1,15 +1,13 @@
-.cartContainer{
-    display: grid;
-    max-width: 2000px;
-    grid-template-columns: auto auto;
-    grid-template-rows: 80px;
-    justify-content: space-around;
-    gap: 3rem;
-
-    
+.cartContainer {
+  display: grid;
+  max-width: 2000px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 80px;
+  justify-content: space-around;
+  gap: 3rem;
 }
 
 .cart-titles {
-    color: black;
-    word-spacing: 1rem;
+  color: black;
+  word-spacing: 1rem;
 }

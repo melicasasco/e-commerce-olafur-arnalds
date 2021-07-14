@@ -6,14 +6,14 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import { Link } from "react-router-dom";
 
 function Cart() {
-  const { items, AddItem, Clear, RemoveItem, total } = useContext(CartContext);
+  const { items, Clear, RemoveItem, total } = useContext(CartContext);
   return (
     <div>
       {items.length == 0 ? (
         <div>
           Your cart is empty
           <Link to="/Shop">
-            <Button>Continue shopping</Button>
+            <Button variant="outlined">Continue shopping</Button>
           </Link>
         </div>
       ) : (
@@ -49,11 +49,11 @@ function Cart() {
                 ))}
               </table>
             </div>
-            <div className="card-container">
+            <div>
               <h2>Total</h2>
               <p>€{total}</p>
               <Link to="/checkout">
-                <Button style={{ padding: "4px" }} variant="outlined">
+                <Button style={{ padding: "4px", marginTop: '2rem' }} variant="outlined">
                   Proceed Checkout
                 </Button>
               </Link>
@@ -63,12 +63,15 @@ function Cart() {
             <Button onClick={Clear} variant="outlined">
               Empty cart
             </Button>
-            <Link to="/Shop">
-                <Button>Continue shopping</Button>
-              </Link>
+            <Link style={{padding: '1rem'}} to="/Shop">
+                <Button variant="outlined">Continue shopping</Button>
+            </Link>
           </div>
         </div>
       )}
+
+
+
     </div>
   );
 }

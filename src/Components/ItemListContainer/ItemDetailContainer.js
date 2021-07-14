@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import ItemDetail  from './ItemDetail';
 import '../Header/Header.css';
 import { db } from '../../firebase';

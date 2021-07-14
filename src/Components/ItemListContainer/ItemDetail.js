@@ -30,17 +30,18 @@ function ItemDetail(props) {
           <div className="card-body">
             <p style={{ padding: "20px" }}>{props.price}€</p>
           </div>
-          {itemsToAdd == 0 && (
+          {itemsToAdd === 0 && (
             <ItemCount stock={props.stock} initial="1" onAdd={onAdd} />
           )}
           {itemsToAdd > 0 && (
             <div>
+              <Link to="/Shop">
+                <Button style={{margin: '0.3rem'}} variant="outlined">Back to shop</Button>
+              </Link>
               <Link to="/cart">
                 <Button variant="outlined">Checkout</Button>
               </Link>
-              <Link to="/Shop">
-                <Button>Continue shopping</Button>
-              </Link>
+
             </div>
           )}
         </div>
