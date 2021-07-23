@@ -1,12 +1,16 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../Context/CartContext";
-import { db } from '../../firebase';
+import { db } from "../../firebase";
 import { Button } from "@material-ui/core";
+import "./checkout.css";
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
 
 function Checkout() {
   const { items, total } = useContext(CartContext);
   const [user, setUser] = useState({});
-  const [order, setOrder] = useState('');
+  const [order, setOrder] = useState("");
 
   const onHandleNameChange = (e) => {
     let aux_user = user;
@@ -27,9 +31,9 @@ function Checkout() {
   };
 
   const addOrEdit = async (object) => {
-    const newOrder = await db.collection('orders').add(object);
+    const newOrder = await db.collection("orders").add(object);
     setOrder(newOrder.id);
-};
+  };
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
@@ -37,67 +41,131 @@ function Checkout() {
       buyer: user,
       items: items,
       date: new Date(),
-      total: total
+      total: total,
     };
     addOrEdit(order);
   };
 
   return (
     <>
-    {order != '' ? (
-        <div>
-      <h3>Su compra por un total de {total} € se procesó correctamente</h3>
-      <h4>Enviamos un email a la casilla {user.email} con el detalle</h4>
-      <h4>Order # {order}</h4>
-      </div>
-    ) : (
-    <>
-    <div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div>
-          <h4 style={{color: 'black'}}>
-            You are buying {items.length} products - final price: {total}€
-          </h4>
+      {order != "" ? (
+        <div className="ordersMessage">
+          <Typography variant="h5" gutterBottom>
+            Thank you for your order.
+          </Typography>
+          <div className="totalPriceEuro">
+            <Typography variant="subtitle1">
+              Your purchase for a total {total} € of was processed succesfully.
+            </Typography>
+          </div>
+          <div>
+            <Typography style={{ color: "black" }}>
+              Your order number is{" "}
+              <span style={{ fontWeight: "bold" }}> {order} </span>
+              <br></br>
+              <br></br> We have emailed your order confirmation to {user.email}.
+            </Typography>
+          </div>
         </div>
-      </div>
-      <h3>Purchase request form</h3>
-      <form onSubmit={onHandleSubmit}>
-        <h4>Contact Information</h4>
-        <br></br>
-        <input style={{width: '250px', height: '2rem', margin:'0.5rem', borderRadius: '5px'}}
-          placeholder="email"
-          name="email"
-          onChange={onHandleEmailChange}
-        ></input>
-        <br></br>
-        <input style={{width: '250px', height: '2rem', margin:'0.5rem', borderRadius: '5px'}}
-          placeholder="name"
-          name="name"
-          onChange={onHandleNameChange}
-        ></input>
-        <br></br>
-        <input style={{width: '250px', height: '2rem', margin:'0.5rem', borderRadius: '5px'}}
-          placeholder="phone"
-          name="phone"
-          onChange={onHandlePhoneChange}
-        ></input>
+      ) : (
+        <>
+          <div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div>
+                <h4 style={{ color: "black" }}>
+                  You are buying {items.length} products - final price: {total}€
+                </h4>
+              </div>
+            </div>
+            <h3>Purchase request form</h3>
+            <form className="form-container form" onSubmit={onHandleSubmit}>
+              <h1>Contact Information</h1>
+              <br></br>
+              <Grid item xs={12} md={6}>
+                <TextField
+                  required
+                  id="cardName"
+                  label="your email adress"
+                  fullWidth
+                  name="email"
+                  onChange={onHandleEmailChange}
+                />
+              </Grid>
+              <br></br>
+              <Grid item xs={12} md={6}>
+                <TextField
+                  required
+                  name="name"
+                  onChange={onHandleNameChange}
+                  label="your name"
+                  fullWidth
+                />
+              </Grid>
+              <br></br>
+              <Grid item xs={12} md={6}>
+                <TextField
+                  required
+                  name="phone"
+                  onChange={onHandlePhoneChange}
+                  label="your phone number"
+                  fullWidth
+                />
+              </Grid>
+              <br></br>
+              <h1 style={{ marginTop: "2rem" }}>Payment</h1>
 
-        <h4>Payment</h4>
-        <input placeholder="card number"></input>
-        <br></br>
-        <input placeholder="name on card"></input>
-        <br></br>
-        <input placeholder="expiration date"></input>
-        <br></br>
-        <input placeholder="security code"></input>
-        <br></br>
-        <Button variant="outlined" style={{margin: '1rem'}} type="submit">Pay now</Button>
-      </form>
-    </div>
-                
-      </>
-    )}
-    
+              <Grid style={{ padding: "5rem" }} container spacing={3}>
+                <Grid item xs={12} md={6}>
+                  <TextField
+                    required
+                    id="cardName"
+                    label="Name on card"
+                    fullWidth
+                    autoComplete="cc-name"
+                  />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <TextField
+                    required
+                    id="cardNumber"
+                    label="Card number"
+                    fullWidth
+                    autoComplete="cc-number"
+                  />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <TextField
+                    required
+                    id="expDate"
+                    label="Expiry date"
+                    fullWidth
+                    autoComplete="cc-exp"
+                  />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <TextField
+                    required
+                    id="cvv"
+                    label="CVV"
+                    helperText="Last three digits on signature strip"
+                    fullWidth
+                    autoComplete="cc-csc"
+                  />
+                </Grid>
+                <Grid item xs={1} md={12}>
+                  <Button
+                    type="submit"
+                    variant="outlined"
+                    style={{ marginTop: "2rem" }}
+                  >
+                    Pay now
+                  </Button>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+        </>
+      )}
     </>
   );
 }

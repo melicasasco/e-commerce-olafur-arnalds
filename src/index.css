@@ -1,43 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 /*Variables colores*/
-:root{
+:root {
   --first-color: #001326;
   --second-color: #05314d;
 }
 
 /*===== Fuente y tipografia =====*/
-:root{
+:root {
   --body-font: "Montserrat";
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
 }
 
-@media screen and (min-width: 768px){
-  :root{
+@media screen and (min-width: 768px) {
+  :root {
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
     --normal-font-size: 1rem;
   }
 }
 
-body{
+body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
 }
 
-h2,p{
+h2,
+p {
   margin: 0;
 }
-ul{
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
 }
 
@@ -51,23 +52,22 @@ a{
   height: 0.18rem;
   left: 0;
   top: 2rem;
-
 }
 
 .icons {
- margin-top: 2rem;
- margin-right:  1rem;
- flex-direction: row;
- align-items: center;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  flex-direction: row;
+  align-items: center;
 }
 
-.nav__item{
-  margin-left: 0,5rem;
+.nav__item {
+  margin-left: 0, 5rem;
   margin-bottom: 0;
 }
 
 .navbar h1 {
-  color: white
+  color: white;
 }
 
 .links {
@@ -82,10 +82,10 @@ a{
 }
 
 .navbar a:hover {
-  color: var(--second-color)
+  color: var(--second-color);
 }
 
-.nav{
+.nav {
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
