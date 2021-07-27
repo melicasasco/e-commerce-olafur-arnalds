@@ -36,7 +36,7 @@ function ItemCategoryContainer({ match }) {
   return (
     <>
       {category.length === 0 ? (
-        <h1>Loading...</h1>
+        <h1 style={{ margin: "14rem" }}>Loading...</h1>
       ) : (
         <div className="cardsContainer">
           <ShopNavigation className="shopMenu" />

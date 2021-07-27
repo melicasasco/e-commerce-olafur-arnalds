@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
 //VIEWS
 import ShopNavigation from "../Components/Navigation/ShopNavigation";
 import ItemListContainer from "../Components/ItemListContainer/ItemListContainer";
