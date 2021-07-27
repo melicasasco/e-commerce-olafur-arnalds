@@ -1,0 +1,37 @@
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+.aboutText {
+  color: black;
+  text-align: justify;
+  padding: 4rem;
+}
+
+.imgAbout {
+  height: 29rem;
+  margin: 3rem;
+  box-shadow: 0 5px 8px 0 rgb(0, 19, 38, 0.5), 0 7px 20px 0 rgb(0, 19, 38, 0.1);
+}
+
+.contactImg {
+  height: 30rem;
+  margin: 2rem;
+  box-shadow: 0 5px 8px 0 rgb(0, 19, 38, 0.5), 0 7px 20px 0 rgb(0, 19, 38, 0.1);
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contactTitle {
+  color: black;
+  padding: 2rem;
+}
+
+.icelandMap {
+  height: 7rem;
+}

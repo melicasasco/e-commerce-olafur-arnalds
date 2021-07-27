@@ -7,29 +7,34 @@
   justify-content: center;
 }
 
+.checkoutTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+}
+
 .totalPriceEuro {
   margin: 1.5rem;
   color: black;
 }
 
+.requestForm {
+  margin: 3rem;
+}
+
 .form-container {
-  margin: 100px auto;
-  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
   box-shadow: 0 5px 8px 0 rgb(0, 19, 38, 0.1), 0 7px 20px 0 rgb(0, 19, 38, 0.1);
-  position: relative;
-  height: 600px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 3rem;
 }
 
 .form {
-  position: absolute;
-  top: 80%;
+  top: 90%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +44,7 @@
 .form h1 {
   font-size: 1rem;
   text-align: center;
-  color: #9f9f9f;
+  color: white;
   font-weight: lighter;
 }
 

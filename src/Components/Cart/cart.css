@@ -1,13 +1,37 @@
 .cartContainer {
   display: grid;
-  max-width: 2000px;
+  max-width: 1240px;
   grid-template-columns: auto auto;
-  grid-template-rows: 80px;
-  justify-content: space-around;
-  gap: 3rem;
+  grid-template-rows: 50px;
+  justify-content: center;
+  margin: 1rem;
+  gap: 4rem;
+}
+
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tableContent {
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px -5px;
+  color: #001326;
+  animation: ease-in-out;
+  padding: 1rem;
 }
 
 .cart-titles {
   color: black;
   word-spacing: 1rem;
+}
+
+.totalPrice {
+  height: 160px;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px -5px;
+  animation: ease-in-out;
+  color: #001326;
 }

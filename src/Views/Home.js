@@ -14,12 +14,12 @@ function Home() {
       <div className="homeC homeGrids">
         <div></div>
         <div>
-          <h2
+          <h1
             data-aos="fade-left"
             style={{ color: "white", marginBottom: "38px", padding: "15px" }}
           >
             Welcome to Ólafur Arnalds Site
-          </h2>
+          </h1>
           <h3 data-aos="fade-left" style={{ padding: "15px" }}>
             Some kind of peace
           </h3>

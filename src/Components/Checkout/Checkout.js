@@ -70,15 +70,18 @@ function Checkout() {
       ) : (
         <>
           <div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div>
-                <h4 style={{ color: "black" }}>
-                  You are buying {items.length} products - final price: {total}€
-                </h4>
+            <div>
+              <div className="checkoutTitle">
+                <h2 style={{ color: "black" }}>
+                  You are buying {items.length} products final price: {total}€
+                </h2>
               </div>
             </div>
-            <h3>Purchase request form</h3>
-            <form className="form-container form" onSubmit={onHandleSubmit}>
+            <h2 style={{ margin: "2rem" }}>Purchase request form</h2>
+            <form
+              className="form-container form backgroundImage"
+              onSubmit={onHandleSubmit}
+            >
               <h1>Contact Information</h1>
               <br></br>
               <Grid item xs={12} md={6}>
@@ -89,6 +92,9 @@ function Checkout() {
                   fullWidth
                   name="email"
                   onChange={onHandleEmailChange}
+                  inputProps={{
+                    style: { fontFamily: "nunito", color: "white" },
+                  }}
                 />
               </Grid>
               <br></br>

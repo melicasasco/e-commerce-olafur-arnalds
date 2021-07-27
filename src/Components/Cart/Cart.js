@@ -10,10 +10,15 @@ function Cart() {
   return (
     <div>
       {items.length == 0 ? (
-        <div>
-          Your cart is empty
+        <div className="emptyCart">
+          <h2 style={{ padding: "2rem" }}>Your cart is empty</h2>
           <Link to="/Shop">
-            <Button variant="outlined">Continue shopping</Button>
+            <Button
+              style={{ margin: "2rem", marginBottom: "20rem" }}
+              variant="outlined"
+            >
+              Continue shopping
+            </Button>
           </Link>
         </div>
       ) : (
@@ -21,13 +26,13 @@ function Cart() {
           <h2 style={{ color: "#001326", padding: "19px" }}>Cart</h2>
           <div className="cartContainer">
             <div>
-              <table>
+              <table className="tableContent">
                 <tr style={{ color: "black" }}>
                   <th>Product</th>
-                  <th>Quantity</th>
+                  <th style={{ padding: "2rem" }}>Quantity</th>
                   <th>Category</th>
-                  <th>Price</th>
-                  <th>Sub-Total</th>
+                  <th style={{ padding: "2rem" }}>Price</th>
+                  <th style={{ padding: "2rem" }}>Sub-Total</th>
                   <th>Remove</th>
                 </tr>
                 {items.map((element) => (
@@ -49,29 +54,31 @@ function Cart() {
                 ))}
               </table>
             </div>
-            <div>
-              <h2>Total</h2>
-              <p>€{total}</p>
+            <div className="totalPrice">
+              <h2 style={{ margin: "1rem" }}>Total</h2>
+              <p style={{ margin: "1rem" }}>€{total}</p>
               <Link to="/checkout">
-                <Button style={{ padding: "4px", marginTop: '2rem' }} variant="outlined">
+                <Button
+                  style={{ padding: "4px", marginTop: "1rem" }}
+                  variant="outlined"
+                >
                   Proceed Checkout
                 </Button>
               </Link>
             </div>
           </div>
-          <div style={{ marginTop: "200px" }}>
+          <div className="bottomButtons" style={{ marginTop: "330px" }}>
             <Button onClick={Clear} variant="outlined">
               Empty cart
             </Button>
-            <Link style={{padding: '1rem'}} to="/Shop">
-                <Button variant="outlined">Continue shopping</Button>
+            <Link to="/Shop">
+              <Button style={{ margin: "2rem" }} variant="outlined">
+                Continue shopping
+              </Button>
             </Link>
           </div>
         </div>
       )}
-
-
-
     </div>
   );
 }
