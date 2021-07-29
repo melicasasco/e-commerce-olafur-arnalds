@@ -3,8 +3,6 @@ import { CartContext } from "../Context/CartContext";
 import { db } from "../../firebase";
 import { Button } from "@material-ui/core";
 import "./checkout.css";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 
 function Checkout() {
@@ -71,104 +69,119 @@ function Checkout() {
         <>
           <div>
             <div>
-              <div className="checkoutTitle">
-                <h2 style={{ color: "black" }}>
-                  You are buying {items.length} products final price: {total}€
-                </h2>
-              </div>
+              <h2
+                style={{
+                  color: "black",
+                  padding: "1rem",
+                  margin: "auto",
+                }}
+              >
+                You are buying {items.length} products - final price: {total}€
+              </h2>
+              <form onSubmit={onHandleSubmit} className="contenedorDelCheckout">
+                <div>
+                  <div class="form">
+                    <div>
+                      <div className="wrapper">
+                        <div className="payment">
+                          <h2>Customer information</h2>
+                          <div class="form">
+                            <div className="card space">
+                              <label className="label">Name</label>
+                              <input
+                                type="text"
+                                class="input"
+                                placeholder="Your name"
+                                onSubmit={onHandleNameChange}
+                              ></input>
+                            </div>
+                            <div className="card space">
+                              <label class="label">Phone number:</label>
+                              <input
+                                type="text"
+                                class="input"
+                                data-mask="0000 0000 0000 0000"
+                                placeholder="Your phone"
+                                onSubmit={onHandlePhoneChange}
+                              ></input>
+                            </div>
+                            <div class="card-space">
+                              <div className="card-item">
+                                <label className="label">
+                                  Your email adress
+                                </label>
+                                <input
+                                  type="text"
+                                  class="input"
+                                  placeholder="Your email"
+                                  name="email"
+                                  onSubmit={onHandleEmailChange}
+                                ></input>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="wrapper">
+                    <div className="payment">
+                      <h2>Payment Gateway</h2>
+                      <div class="form">
+                        <div className="card space">
+                          <label className="label">Card holder:</label>
+                          <input
+                            type="text"
+                            class="input"
+                            placeholder="Coding Market"
+                          ></input>
+                        </div>
+                        <div className="card space">
+                          <label class="label">Card number:</label>
+                          <input
+                            type="text"
+                            class="input"
+                            data-mask="0000 0000 0000 0000"
+                            placeholder="Card Number"
+                          ></input>
+                        </div>
+                        <div class="card-grp space">
+                          <div className="card-item">
+                            <label className="label">Expiry date:</label>
+                            <input
+                              type="text"
+                              name="expiry-data"
+                              class="input"
+                              placeholder="00 / 00"
+                              // $("input[name='expiry-data']").mask("00 / 00");
+                            ></input>
+                            <i class="far fa-calendar-alt"></i>
+                          </div>
+                          <div className="card-item">
+                            <label className="label">CVC:</label>
+                            <input
+                              type="text"
+                              class="input"
+                              data-mask="000"
+                              placeholder="000"
+                            ></input>
+                          </div>
+                        </div>
+                        <Button
+                          type="submit"
+                          variant="outlined"
+                          style={{ marginTop: "2rem" }}
+                        >
+                          Pay now
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
-            <h2 style={{ margin: "2rem" }}>Purchase request form</h2>
-            <form
-              className="form-container form backgroundImage"
-              onSubmit={onHandleSubmit}
-            >
-              <h1>Contact Information</h1>
-              <br></br>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  required
-                  id="cardName"
-                  label="your email adress"
-                  fullWidth
-                  name="email"
-                  onChange={onHandleEmailChange}
-                  inputProps={{
-                    style: { fontFamily: "nunito", color: "white" },
-                  }}
-                />
-              </Grid>
-              <br></br>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  required
-                  name="name"
-                  onChange={onHandleNameChange}
-                  label="your name"
-                  fullWidth
-                />
-              </Grid>
-              <br></br>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  required
-                  name="phone"
-                  onChange={onHandlePhoneChange}
-                  label="your phone number"
-                  fullWidth
-                />
-              </Grid>
-              <br></br>
-              <h1 style={{ marginTop: "2rem" }}>Payment</h1>
-
-              <Grid style={{ padding: "5rem" }} container spacing={3}>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    required
-                    id="cardName"
-                    label="Name on card"
-                    fullWidth
-                    autoComplete="cc-name"
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    required
-                    id="cardNumber"
-                    label="Card number"
-                    fullWidth
-                    autoComplete="cc-number"
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    required
-                    id="expDate"
-                    label="Expiry date"
-                    fullWidth
-                    autoComplete="cc-exp"
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    required
-                    id="cvv"
-                    label="CVV"
-                    helperText="Last three digits on signature strip"
-                    fullWidth
-                    autoComplete="cc-csc"
-                  />
-                </Grid>
-                <Grid item xs={1} md={12}>
-                  <Button
-                    type="submit"
-                    variant="outlined"
-                    style={{ marginTop: "2rem" }}
-                  >
-                    Pay now
-                  </Button>
-                </Grid>
-              </Grid>
-            </form>
           </div>
         </>
       )}

@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1rem;
+  margin-top: 1rem;
 }
 
 .totalPriceEuro {
@@ -23,59 +23,74 @@
   margin: 3rem;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
+.contenedorDelCheckout {
+  width: auto;
+  display: grid;
+  grid-template-columns: 32rem 32rem;
   justify-content: center;
-  margin: auto;
-  box-shadow: 0 5px 8px 0 rgb(0, 19, 38, 0.1), 0 7px 20px 0 rgb(0, 19, 38, 0.1);
-  padding: 3rem;
+  gap: 0.3rem;
+  color: #001326;
+  box-shadow: 0px 0px 10px -5px;
+  margin: 1rem;
 }
 
-.form {
-  top: 90%;
-  left: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.contactInfo {
+  max-width: 360px;
+  margin: 80px auto;
+  height: auto;
+  padding: 50px;
+  padding-top: 70px;
+  border-radius: 5px;
+  position: relative;
 }
 
-.form h1 {
-  font-size: 1rem;
+.payment {
+  max-width: 360px;
+  margin: 80px auto;
+  padding: 35px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.payment h2 {
   text-align: center;
-  color: white;
-  font-weight: lighter;
+  margin-bottom: 2rem;
+  color: #001326;
 }
 
-.form-inputs {
-  margin-bottom: 0.5rem;
-  width: 100%;
-  height: 80%;
-}
-
-.paymentContainer {
-  padding: 1000px;
-}
-
-.form-inputs:focus {
-  border-color: cadetblue;
-}
-
-.form-inputs p {
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-.form-label {
-  display: inline-block;
-  font-size: 0.9rem;
-  margin: 6px;
-}
-
-.form-input {
+.form .label {
   display: block;
-  padding-left: 10px;
-  height: 40px;
+  color: #478acc;
+  margin-bottom: 6px;
+}
+
+.input {
+  padding: 13px 0px 13px 25px;
   width: 100%;
+  text-align: center;
+  border: 1px solid #478acc;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  outline: none;
+  font-size: 16px;
+}
+
+.card-grp {
+  display: flex;
+  justify-content: space-around;
+}
+
+.space {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 420px) {
+  .card-grp {
+    flex-direction: column;
+  }
+  .card-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

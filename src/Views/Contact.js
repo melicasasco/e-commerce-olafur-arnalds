@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./about.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import PinDropIcon from "@material-ui/icons/PinDrop";
+import qr from "./qr_img.png";
 
 function Contact() {
   return (
@@ -11,17 +11,36 @@ function Contact() {
         <div>
           <img
             className="contactImg"
-            src="https://www.zoneout.com/files/2020/03/ZOStratus-scaled.jpg"
+            src="https://www.neo2.com/wp-content/uploads/2021/06/Olafur-Arnalds-ft-Josin-IFEMA-Madrid-Live-01.jpg"
           ></img>
         </div>
-        <div>
-          <h3 className="contactTitle">
-            You may find me in Reikjavik, Iceland
-          </h3>
-          <img
-            className="icelandMap"
-            src="data:image/png;base64,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"
-          ></img>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <PinDropIcon style={{ color: "#05314d" }}></PinDropIcon>
+            <p className="contactTitle">Reykjavík, Iceland</p>
+          </div>
+          <div>
+            <img
+              src={qr}
+              style={{
+                height: "15rem",
+                display: "flex",
+                justifyContent: "flex-start",
+              }}
+            ></img>
+          </div>
         </div>
       </div>
     </div>

@@ -19,7 +19,10 @@
 
 @media screen and (max-width: 375px) {
   .containerHome {
-    background-size: 280%;
+    background-size: 370%;
+  }
+  h1 {
+    font-size: 1.4rem;
   }
   .homeGrids {
     grid-template-columns: auto;

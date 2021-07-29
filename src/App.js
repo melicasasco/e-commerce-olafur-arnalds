@@ -19,7 +19,7 @@ import { CartProvider } from "./Components/Context/CartContext";
 import { BottomNavigation, makeStyles } from "@material-ui/core";
 import { BottomNavigationAction } from "@material-ui/core";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import FacebookIcon from "@material-ui/icons/Facebook";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 import InstagramIcon from "@material-ui/icons/Instagram";
 
 const useStyles = makeStyles({
@@ -27,6 +27,8 @@ const useStyles = makeStyles({
     padding: "0.5rem",
     color: "grey",
     boxShadow: `0 5px 8px 0 rgb(0, 19, 38, 0.1), 0 7px 20px `,
+    bottom: 0,
+    width: "auto",
   },
 });
 
@@ -49,9 +51,12 @@ function App() {
             <Route path="/Checkout" component={Checkout} />
           </Switch>
           <BottomNavigation className={classes.root}>
-            <a href="https://www.facebook.com/olafurarnalds" target="_blank">
+            <a
+              href="https://www.youtube.com/channel/UC9XfDqYSm6ezuw0y_u3t_4A"
+              target="_blank"
+            >
               <BottomNavigationAction
-                icon={<FacebookIcon style={{ color: "#05314d" }} />}
+                icon={<YouTubeIcon style={{ color: "#05314d" }} />}
               />
             </a>
             <a href="https://twitter.com/olafurarnalds?lang=es" target="_blank">

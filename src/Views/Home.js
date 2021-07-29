@@ -12,23 +12,18 @@ function Home() {
   return (
     <div className="containerHome">
       <div className="homeC homeGrids">
-        <div></div>
         <div>
-          <h1
-            data-aos="fade-left"
-            style={{ color: "white", marginBottom: "38px", padding: "15px" }}
-          >
+          <h1 data-aos="fade-left" style={{ color: "white", margin: "3rem" }}>
             Welcome to Ólafur Arnalds Site
           </h1>
           <h3 data-aos="fade-left" style={{ padding: "15px" }}>
-            Some kind of peace
+            Some kind of peace tour | 2022
           </h3>
           <h2 data-aos="fade-left" className="hoverNewAlbum">
-            New album out now
+            Coming soon
           </h2>
           <ArrowDropDownIcon />
         </div>
-        <div className="leftContainer"></div>
       </div>
       <div></div>
     </div>

@@ -24,7 +24,9 @@
 
 .contactContent {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 5rem;
 }
 
 .contactTitle {
