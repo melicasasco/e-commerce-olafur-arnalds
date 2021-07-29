@@ -92,7 +92,7 @@ function Checkout() {
                                 type="text"
                                 class="input"
                                 placeholder="Your name"
-                                onSubmit={onHandleNameChange}
+                                onChange={onHandleNameChange}
                               ></input>
                             </div>
                             <div className="card space">
@@ -102,7 +102,7 @@ function Checkout() {
                                 class="input"
                                 data-mask="0000 0000 0000 0000"
                                 placeholder="Your phone"
-                                onSubmit={onHandlePhoneChange}
+                                onChange={onHandlePhoneChange}
                               ></input>
                             </div>
                             <div class="card-space">
@@ -115,7 +115,7 @@ function Checkout() {
                                   class="input"
                                   placeholder="Your email"
                                   name="email"
-                                  onSubmit={onHandleEmailChange}
+                                  onChange={onHandleEmailChange}
                                 ></input>
                               </div>
                             </div>
