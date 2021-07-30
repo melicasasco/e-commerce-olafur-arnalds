@@ -52,6 +52,7 @@ function About() {
           <img
             className="imgAbout"
             src="https://cdn1.umg3.net/325/files/2017/01/Olafur-Arnalds-x.jpg"
+            alt="Ólafur Arnalds"
           ></img>
         </div>
       </div>

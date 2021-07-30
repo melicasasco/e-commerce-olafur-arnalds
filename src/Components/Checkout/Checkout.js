@@ -46,7 +46,7 @@ function Checkout() {
 
   return (
     <>
-      {order != "" ? (
+      {order !== "" ? (
         <div className="ordersMessage">
           <Typography variant="h5" gutterBottom>
             Thank you for your order.

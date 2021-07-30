@@ -15,10 +15,8 @@ function ItemDetailContainer({ match }) {
       .get()
       .then((querySnapshot) => {
         const docs = [];
-        console.log(querySnapshot);
         querySnapshot.forEach((doc) => {
           docs.push({ ...doc.data(), id: doc.id });
-          console.log(docs);
         });
         setItem(docs);
       });
@@ -33,7 +31,7 @@ function ItemDetailContainer({ match }) {
 
   return (
     <>
-      {item.length == 0 ? (
+      {item.length === 0 ? (
         <h1 style={{ margin: "14rem" }}>Loading...</h1>
       ) : (
         <>

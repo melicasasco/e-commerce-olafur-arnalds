@@ -12,6 +12,7 @@ function Contact() {
           <img
             className="contactImg"
             src="https://www.neo2.com/wp-content/uploads/2021/06/Olafur-Arnalds-ft-Josin-IFEMA-Madrid-Live-01.jpg"
+            alt="Olafur Arnalds"
           ></img>
         </div>
         <div
@@ -34,6 +35,7 @@ function Contact() {
           <div>
             <img
               src={qr}
+              alt="Olafur Arnalds"
               style={{
                 height: "15rem",
                 display: "flex",

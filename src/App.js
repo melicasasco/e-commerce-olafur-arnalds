@@ -22,19 +22,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import InstagramIcon from "@material-ui/icons/Instagram";
 
-const useStyles = makeStyles({
-  root: {
-    padding: "0.5rem",
-    color: "grey",
-    boxShadow: `0 5px 8px 0 rgb(0, 19, 38, 0.1), 0 7px 20px `,
-    bottom: 0,
-    width: "auto",
-  },
-});
-
 function App() {
-  const classes = useStyles();
-
   return (
     <CartProvider>
       <Router>
@@ -50,16 +38,21 @@ function App() {
             <Route path="/cart" component={Cart} />
             <Route path="/Checkout" component={Checkout} />
           </Switch>
-          <BottomNavigation className={classes.root}>
+          <BottomNavigation className="footer">
             <a
               href="https://www.youtube.com/channel/UC9XfDqYSm6ezuw0y_u3t_4A"
               target="_blank"
+              rel="noreferrer"
             >
               <BottomNavigationAction
                 icon={<YouTubeIcon style={{ color: "#05314d" }} />}
               />
             </a>
-            <a href="https://twitter.com/olafurarnalds?lang=es" target="_blank">
+            <a
+              href="https://twitter.com/olafurarnalds?lang=es"
+              target="_blank"
+              rel="noreferrer"
+            >
               <BottomNavigationAction
                 icon={<TwitterIcon style={{ color: "#05314d" }} />}
               />
@@ -67,6 +60,7 @@ function App() {
             <a
               href="https://www.instagram.com/olafurarnalds/?hl=es"
               target="_blank"
+              rel="noreferrer"
             >
               <BottomNavigationAction
                 icon={<InstagramIcon style={{ color: "#05314d" }} />}

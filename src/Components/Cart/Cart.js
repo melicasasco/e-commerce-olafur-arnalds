@@ -9,7 +9,7 @@ function Cart() {
   const { items, Clear, RemoveItem, total } = useContext(CartContext);
   return (
     <div>
-      {items.length == 0 ? (
+      {items.length === 0 ? (
         <div className="emptyCart">
           <h2 style={{ padding: "2rem" }}>Your cart is empty</h2>
           <Link to="/Shop">

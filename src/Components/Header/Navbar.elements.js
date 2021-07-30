@@ -29,7 +29,7 @@ export const Menu = styled.ul`
   @media screen and (max-width: 960px) {
     position: absolute;
     top: 70px;
-    right: ${({ showMobileMenu }) => (showMobileMenu ? "0" : "-100%")};
+    right: ${({ showMobileMenu }) => (showMobileMenu ? "0" : "100%")};
     width: 50%;
     height: 90vh;
     display: flex;
@@ -38,12 +38,11 @@ export const Menu = styled.ul`
     align-items: center;
     z-index: 1000;
     background-color: #001326;
-    transition: 0.8s all ease;
+    transition: all ease;
   }
 `;
 
 export const MenuItem = styled.li`
-  z-index: 999;
   height: 100%;
   display: flex;
   flex-wrap: wrap;

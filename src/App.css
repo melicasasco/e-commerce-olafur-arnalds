@@ -19,7 +19,6 @@
 @media (max-width: 320px) {
   .cards {
     grid-template-columns: 1fr 1fr;
-    max-width: 320px;
     margin: auto;
   }
 }
@@ -31,4 +30,22 @@
     margin: auto;
     gap: 1.3rem;
   }
+}
+
+@media (max-width: 425px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem;
+    max-width: 320px;
+    margin: auto;
+    gap: 1.3rem;
+  }
+}
+
+.footer {
+  padding: 0.5rem;
+  color: grey;
+  box-shadow: 0 5px 8px 0 rgb(0, 19, 38, 0.1), 0 7px 20px;
+  bottom: 0;
+  width: auto;
 }

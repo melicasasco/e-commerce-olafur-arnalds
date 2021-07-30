@@ -34,6 +34,12 @@
   padding: 2rem;
 }
 
-.icelandMap {
-  height: 7rem;
+@media screen and (max-width: 320px) {
+  .imgAbout {
+    height: 15rem;
+  }
+  .aboutContent {
+    grid-template-columns: 1fr;
+    margin: 4rem;
+  }
 }

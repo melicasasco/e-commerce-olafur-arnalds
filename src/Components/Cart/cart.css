@@ -42,8 +42,8 @@
 
 .icon-button__badge {
   position: absolute;
-  top: 29px;
-  right: 18px;
+  top: 2rem;
+  right: 4rem;
   width: 1.1rem;
   height: 1.1rem;
   background: #5ca5d3;
