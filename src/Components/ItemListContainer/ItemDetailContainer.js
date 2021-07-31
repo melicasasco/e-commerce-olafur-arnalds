@@ -23,7 +23,7 @@ function ItemDetailContainer({ match }) {
   };
   useEffect(() => {
     getItems();
-  }, []);
+  });
 
   //useEffect(() => {
   // axios('../data.json').then((res) => setItem (res.data.filter((element) => element.id == itemId)));

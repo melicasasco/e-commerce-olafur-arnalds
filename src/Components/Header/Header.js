@@ -7,7 +7,6 @@ import {
   IconContainer,
   Menu,
   MenuItem,
-  MenuItemLink,
   MobileMenuIcon,
 } from "./Navbar.elements";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -39,27 +38,27 @@ const Header = () => {
 
             <Menu showMobileMenu={showMobileMenu}>
               <MenuItem onClick={() => handleShowMobileMenu()}>
-                <MenuItemLink>
+                
                   <Link className="navLink" to="/shop">
                     SHOP
                   </Link>
-                </MenuItemLink>
+                
               </MenuItem>
 
               <MenuItem onClick={() => handleShowMobileMenu()}>
-                <MenuItemLink>
+                
                   <Link className="navLink" to="/about">
                     ABOUT
                   </Link>
-                </MenuItemLink>
+                
               </MenuItem>
 
               <MenuItem onClick={() => handleShowMobileMenu()}>
-                <MenuItemLink>
+                
                   <Link className="navLink" to="/contact">
                     CONTACT
                   </Link>
-                </MenuItemLink>
+                
               </MenuItem>
               <MenuItem onClick={() => handleShowMobileMenu()}>
                 <CartWidget />

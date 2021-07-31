@@ -5,7 +5,7 @@ function ShopNavigation() {
   return (
     <nav>
       <ul className="shopMenu">
-        <Link className="link" to="/category/CD" className="Link">
+        <Link className="Link" to="/category/CD" >
           CD
         </Link>
         <Link to="/category/Vinyl" className="Link">

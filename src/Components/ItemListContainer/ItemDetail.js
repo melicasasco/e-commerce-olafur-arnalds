@@ -6,7 +6,7 @@ import { Button } from "@material-ui/core";
 
 function ItemDetail(props) {
   const [itemsToAdd, setItemsToAdd] = useState(0);
-  const { items, AddItem } = useContext(CartContext);
+  const { AddItem } = useContext(CartContext);
 
   const onAdd = (e) => {
     AddItem(props, e);

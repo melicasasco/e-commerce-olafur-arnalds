@@ -16,7 +16,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //CONTEXT
 import { CartProvider } from "./Components/Context/CartContext";
 //Material UI
-import { BottomNavigation, makeStyles } from "@material-ui/core";
 import { BottomNavigationAction } from "@material-ui/core";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import YouTubeIcon from "@material-ui/icons/YouTube";
@@ -38,35 +37,26 @@ function App() {
             <Route path="/cart" component={Cart} />
             <Route path="/Checkout" component={Checkout} />
           </Switch>
-          <BottomNavigation className="footer">
-            <a
-              href="https://www.youtube.com/channel/UC9XfDqYSm6ezuw0y_u3t_4A"
-              target="_blank"
-              rel="noreferrer"
-            >
+          <div className="footer">
               <BottomNavigationAction
                 icon={<YouTubeIcon style={{ color: "#05314d" }} />}
+                href="https://www.youtube.com/channel/UC9XfDqYSm6ezuw0y_u3t_4A"
+                target="_blank"
+                rel="noreferrer"
               />
-            </a>
-            <a
-              href="https://twitter.com/olafurarnalds?lang=es"
-              target="_blank"
-              rel="noreferrer"
-            >
               <BottomNavigationAction
                 icon={<TwitterIcon style={{ color: "#05314d" }} />}
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/olafurarnalds/?hl=es"
+                href="https://twitter.com/olafurarnalds?lang=es"
               target="_blank"
               rel="noreferrer"
-            >
+              />
               <BottomNavigationAction
                 icon={<InstagramIcon style={{ color: "#05314d" }} />}
+                href="https://www.instagram.com/olafurarnalds/?hl=es"
+                target="_blank"
+                rel="noreferrer"
               />
-            </a>
-          </BottomNavigation>
+          </div>
         </div>
       </Router>
     </CartProvider>

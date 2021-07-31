@@ -6,7 +6,7 @@ import "./checkout.css";
 import Typography from "@material-ui/core/Typography";
 
 function Checkout() {
-  const { items, total } = useContext(CartContext);
+  const { items, total, Clear } = useContext(CartContext);
   const [user, setUser] = useState({});
   const [order, setOrder] = useState("");
 
@@ -42,6 +42,7 @@ function Checkout() {
       total: total,
     };
     addOrEdit(order);
+    Clear();
   };
 
   return (
@@ -53,12 +54,12 @@ function Checkout() {
           </Typography>
           <div className="totalPriceEuro">
             <Typography variant="subtitle1">
-              Your purchase for a total {total} € of was processed succesfully.
+              Your purchase was processed succesfully.
             </Typography>
           </div>
           <div>
             <Typography style={{ color: "black" }}>
-              Your order number is{" "}
+              Your order code is{" "}
               <span style={{ fontWeight: "bold" }}> {order} </span>
               <br></br>
               <br></br> We have emailed your order confirmation to {user.email}.
@@ -80,39 +81,39 @@ function Checkout() {
               </h2>
               <form onSubmit={onHandleSubmit} className="contenedorDelCheckout">
                 <div>
-                  <div class="form">
+                  <div className="form">
                     <div>
                       <div className="wrapper">
                         <div className="payment">
                           <h2>Customer information</h2>
-                          <div class="form">
+                          <div className="form">
                             <div className="card space">
                               <label className="label">Name</label>
                               <input
                                 type="text"
-                                class="input"
+                                className="input"
                                 placeholder="Your name"
                                 onChange={onHandleNameChange}
                               ></input>
                             </div>
                             <div className="card space">
-                              <label class="label">Phone number:</label>
+                              <label className="label">Phone number:</label>
                               <input
                                 type="text"
-                                class="input"
+                                className="input"
                                 data-mask="0000 0000 0000 0000"
                                 placeholder="Your phone"
                                 onChange={onHandlePhoneChange}
                               ></input>
                             </div>
-                            <div class="card-space">
+                            <div className="card-space">
                               <div className="card-item">
                                 <label className="label">
                                   Your email adress
                                 </label>
                                 <input
                                   type="text"
-                                  class="input"
+                                  className="input"
                                   placeholder="Your email"
                                   name="email"
                                   onChange={onHandleEmailChange}
@@ -129,41 +130,41 @@ function Checkout() {
                   <div className="wrapper">
                     <div className="payment">
                       <h2>Payment Gateway</h2>
-                      <div class="form">
+                      <div className="form">
                         <div className="card space">
                           <label className="label">Card holder:</label>
                           <input
                             type="text"
-                            class="input"
+                            className="input"
                             placeholder="Coding Market"
                           ></input>
                         </div>
                         <div className="card space">
-                          <label class="label">Card number:</label>
+                          <label className="label">Card number:</label>
                           <input
                             type="text"
-                            class="input"
+                            className="input"
                             data-mask="0000 0000 0000 0000"
                             placeholder="Card Number"
                           ></input>
                         </div>
-                        <div class="card-grp space">
+                        <div className="card-grp space">
                           <div className="card-item">
                             <label className="label">Expiry date:</label>
                             <input
                               type="text"
                               name="expiry-data"
-                              class="input"
+                              className="input"
                               placeholder="00 / 00"
                               // $("input[name='expiry-data']").mask("00 / 00");
                             ></input>
-                            <i class="far fa-calendar-alt"></i>
+                            <i className="far fa-calendar-alt"></i>
                           </div>
                           <div className="card-item">
                             <label className="label">CVC:</label>
                             <input
                               type="text"
-                              class="input"
+                              className="input"
                               data-mask="000"
                               placeholder="000"
                             ></input>

@@ -14,7 +14,7 @@ function CartWidget() {
     <div>
       <Link to="/cart">
         <ShoppingCartOutlinedIcon className="navLink" />
-        <span className="icon-button__badge">{totalItems}</span>
+        <span className="navLink">{totalItems}</span>
       </Link>
     </div>
   );

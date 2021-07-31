@@ -48,13 +48,11 @@ export const MenuItem = styled.li`
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-end;
-`;
-
-export const MenuItemLink = styled.a`
   padding: 0.5rem 1.7rem;
   font-family: "Montserrat";
   font-size: 1rem;
 `;
+
 
 export const MobileMenuIcon = styled.div`
   display: none;
