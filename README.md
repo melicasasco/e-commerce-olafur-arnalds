@@ -1,14 +1,19 @@
-# Project Name
+# Ólafur Arnalds Store
 
 ---
 
-Ólafur Arnalds Store.
-
-## General Info
-
----
+## About
 
 Tienda online del músico islandés Ólafur Arnalds. Venta de CDS, Vinilos y Partituras.
+
+## Functionalities
+
+- Menú con las secciones shop, about, contact y carrito.
+- Dentro de shop listado de todos los items destacados disponibles, se puede elegir por las categorías de CD, Vinilo y Partitura, mostrando sus detalles.
+- Dentro del carrito listado de todos los productos y el total de la compra.
+- Dentro del checkout feedback de la compra realizada mostrando el código de orden de la compra.
+
+---
 
 ### Screenshot
 
@@ -39,4 +44,5 @@ $ npm start
 ---
 
 > Melanie Casasco
-> www.linkedin.com/in/melanie-casasco/ > https://melicasasco.github.io/portfolio/
+> www.linkedin.com/in/melanie-casasco/ 
+> https://melicasasco.github.io/portfolio/
