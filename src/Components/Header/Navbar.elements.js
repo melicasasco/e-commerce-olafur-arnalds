@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
   margin: auto;
 `;
 
+
 export const IconContainer = styled.div`
   font-family: "Montserrat";
   font-size: 1.5rem;
@@ -24,7 +25,7 @@ export const IconContainer = styled.div`
 `;
 
 export const Menu = styled.ul`
-  height: 50%;
+  height: 40%;
   display: flex;
   @media screen and (max-width: 960px) {
     position: absolute;
@@ -48,7 +49,7 @@ export const MenuItem = styled.li`
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-end;
-  padding: 0.5rem 1.7rem;
+  margin: 0.1rem 1.7rem;
   font-family: "Montserrat";
   font-size: 1rem;
 `;

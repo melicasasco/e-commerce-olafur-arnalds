@@ -13,7 +13,7 @@ function CartWidget() {
   return (
     <div>
       <Link to="/cart">
-        <ShoppingCartOutlinedIcon className="navLink" />
+        <ShoppingCartOutlinedIcon  style={{paddingTop: "0.7rem"}} className="navLink" />
         <span className="navLink">{totalItems}</span>
       </Link>
     </div>

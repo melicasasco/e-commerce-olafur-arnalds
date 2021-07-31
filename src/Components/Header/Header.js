@@ -37,7 +37,7 @@ const Header = () => {
             </MobileMenuIcon>
 
             <Menu showMobileMenu={showMobileMenu}>
-              <MenuItem onClick={() => handleShowMobileMenu()}>
+              <MenuItem className="navLink" onClick={() => handleShowMobileMenu()}>
                 
                   <Link className="navLink" to="/shop">
                     SHOP

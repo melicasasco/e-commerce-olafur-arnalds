@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 function Home() {
   useEffect(() => {
@@ -22,7 +21,6 @@ function Home() {
           <h2 data-aos="fade-left" className="hoverNewAlbum">
             Coming soon
           </h2>
-          <ArrowDropDownIcon />
         </div>
       </div>
       <div></div>

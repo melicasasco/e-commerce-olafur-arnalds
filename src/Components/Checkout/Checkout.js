@@ -156,9 +156,7 @@ function Checkout() {
                               name="expiry-data"
                               className="input"
                               placeholder="00 / 00"
-                              // $("input[name='expiry-data']").mask("00 / 00");
                             ></input>
-                            <i className="far fa-calendar-alt"></i>
                           </div>
                           <div className="card-item">
                             <label className="label">CVC:</label>
